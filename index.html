@@ -44,10 +44,35 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	
+	<script type="text/javascript" src="js/rythm.js"></script>
+
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+	<style type="text/css">
+		#logo
+		{
+		animation:mymove 10s linear 1s infinite;
+		-webkit-animation:mymove 10s linear 1s infinite; /*Safari and Chrome*/
+		animation-play-state: paused;
+		-webkit-animation-play-state: paused;
+		}
+	
+		@keyframes mymove
+		{
+		from {transform:rotate(0deg);}
+		to {transform:rotate(360deg);}
+		}
+
+		@-webkit-keyframes mymove /*Safari and Chrome*/
+		{
+		from {transform:rotate(0deg);}
+		to {transform:rotate(360deg);}
+		}
+	</style>
+	
 	<script type="text/javascript">
 		function  showImg(){
 			document.getElementById("wxImg").style.display='block';
@@ -55,6 +80,27 @@
 		function hideImg(){
 			document.getElementById("wxImg").style.display='none';
 		}
+
+		function high(){
+			var rythm = new Rythm();
+			rythm.addRythm('twist2', 'twist', 10, 1, {
+              min: -10,
+              max: 160
+            })
+			rythm.addRythm('color2', 'color', 10, 1, { 
+              from: [0,0,255], 
+              to:[255,0,255] 
+            })
+			rythm.addRythm('color3', 'color', 10, 1, { 
+              from: [255,255,0],
+              to:[255,0,0]
+            })
+			rythm.setMusic("1.mp3");
+
+			rythm.start();
+
+		}
+
 	</script>
 		  
 	</head>
@@ -78,11 +124,11 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-4 col-xs-12">
+				<div class="col-sm-4 col-xs-12 rythm-medium">
 					<div id="gtco-logo"><a href="index.html">免费学习机房<em>.</em></a></div>
 				</div>
 
-				<div class="col-xs-8 text-right menu-1">
+				<div class="col-xs-8 text-right menu-1 rythm-medium">
 					<ul>
 						<li class="active"><a href="index.html">主页</a></li>
 						<li><a href="about.html">简介</a></li>
@@ -97,14 +143,16 @@
 						<li class="has-dropdown">
 							<a href="news.html">机房资讯</a>
 							<ul class="dropdown">
-								<li><a href="#">公告</a></li>
-								<li><a href="#">活动</a></li>
-								<li><a href="#">招新</a></li>
-								<li><a href="#">项目展示</a></li>
+								<li><a href="news.html#gonggao">公告</a></li>
+								<li><a href="news.html#huodong">活动</a></li>
+								<li><a href="news.html#zhaoxin">招新</a></li>
+								<li><a href="news.html#xiangmuzhanshi">项目展示</a></li>
 							</ul>
 						</li>
 						<li><a href="http://fcc.cumt.edu.cn/blog/" target="_blank">博客</a></li>
 						<li><a href="contact.html">联系我们</a></li>
+						<li><a href="javascript:play();high();">High</a></li>
+
 					</ul>
 				</div>
 			</div>
@@ -121,7 +169,7 @@
 						<div class="display-tc">
 							<h1 class="animate-box" data-animate-effect="fadeInUp"><img class="logo" id="logo" src="images/logo1.png" alt="logo">免费学习机房<em>.</em></h1>
 							<h2 class="animate-box" data-animate-effect="fadeInUp">尽我所能，为上机人员提供最优的配置，最好的服务！</h2>
-							<p class="animate-box" data-animate-effect="fadeInUp"><a href="about.html" class="btn btn-white btn-lg btn-outline">了解更多</a></p>
+							<p class="animate-box" data-animate-effect="fadeInUp"><a href="about.html" class="btn btn-white btn-lg btn-outline rythm color3 rythm-medium">了解更多</a></p>
 						</div>
 					</div>
 				</div>
@@ -134,32 +182,32 @@
 			<div class="gtco-flex">
 				<div class="feature feature-1 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-inner">
-						<span class="icon">
+						<span class="icon rythm-medium">
 							<i class="fa fa-desktop"></i>
 						</span>
 						<h3>技术部</h3>
-						<p>负责机房设备维护与送修电脑维修。 </p>
-						<p><a href="services.html#jishu" class="btn btn-white btn-outline">了解更多</a></p>
+						<p>负责机房设备维护，对同学们送修电脑的维修，以及对外技术培训。 </p>
+						<p><a href="services.html#jishu" class="btn btn-white btn-outline rythm color2 rythm-medium">了解更多</a></p>
 					</div>
 				</div>
 				<div class="feature feature-2 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-inner">
-						<span class="icon">
+						<span class="icon rythm-medium">
 							<i class="fa fa-book"></i>
 						</span>
 						<h3>日管部</h3>
 						<p>主要负责对上机人员进行登记和对机房环境的维护工作。 </p>
-						<p><a href="services.html#riguan" class="btn btn-white btn-outline">了解更多</a></p>
+						<p><a href="services.html#riguan" class="btn btn-white btn-outline rythm color2 rythm-medium">了解更多</a></p>
 					</div>
 				</div>
 				<div class="feature feature-3 animate-box" data-animate-effect="fadeInUp">
 					<div class="feature-inner">
-						<span class="icon">
+						<span class="icon rythm-medium">
 							<i class="fa fa-group"></i>
 						</span>
 						<h3>兴趣小组</h3>
 						<p>社团化管理方式，由对计算机有浓厚兴趣的人员组成，并由技术部提供计算机软硬件技术知识培训。 </p>
-						<p><a href="services.html#gtco-subscribe" class="btn btn-white btn-outline">了解更多</a></p>
+						<p><a href="services.html#gtco-subscribe" class="btn btn-white btn-outline rythm color2 rythm-medium">了解更多</a></p>
 					</div>
 				</div>
 			</div>
@@ -178,7 +226,7 @@
 			<div class="row">
 				<div class="col-md-3 col-sm-6">
 					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
+						<span class="icon rythm-medium">
 							<i class="fa fa-desktop"></i>
 						</span>
 						<h3>免费上机</h3>
@@ -187,29 +235,29 @@
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
+						<span class="icon rythm-medium">
 							<i class="fa fa-gear"></i>
 						</span>
-						<h3>免费维修</h3>
+						<h3><a href="http://www.jsform.com/web/formview/5804ea390cf2c4c32ccbd179">免费维修</a></h3>
 						<p>技术部成员每天下午16:00-19:00坐镇值班，免费为同学们维修电脑或安装PS、CAD等软件。<br />免费送修地址：<br />理学院A225 </p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="fa fa-child"></i>
+						<span class="icon rythm-medium">
+							<i class="fa fa-comments"></i>
 						</span>
 						<h3>技术培训</h3>
-						<p>每周日下午在理学院A225组织兴趣小组培训交流会，并对全校师生开放<br />欢迎前来交流分享。 </p>
+						<p>每周日下午在理学院A225组织兴趣小组技术培训交流会，并对全校师生开放<br />欢迎前来交流分享。 </p>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="feature-center animate-box" data-animate-effect="fadeIn">
-						<span class="icon">
-							<i class="fa fa-comments"></i>
+						<span class="icon rythm-medium">
+							<i class="fa fa-university"></i>
 						</span>
-						<h3>博客论坛</h3>
-						<p>机房博客与论坛由技术部负责运营，并免费对外开放<br />欢迎投稿！ </p>
+						<h3>活动场所提供</h3>
+						<p>免费学习机房一机房有大量计算机可供使用，二机房提供会议场所并配有投影设备。任何组织或个人在提出申请后可借用机房场所举办会议或活动。 </p>
 					</div>
 				</div>
 			</div>
@@ -220,62 +268,61 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>我们的骨架</h2>
-					<p>他们是学习机房中流砥柱，是机房日常事务和活动的决策者。</p>
+					<h2>成员相册</h2>
+					<p>伙伴们，机房的定义，就是你们！</p>
 				</div>
 			</div>
 
 			<div class="row row-pb-md">
 				<div class="col-md-12">
 					<ul id="gtco-portfolio-list">
-						<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/wangqingyi.jpg); "> 
+						<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/1.jpg); "> 
 							<a class="color-1">
 								<div class="case-studies-summary">
-									<span>免费学习机房主任</span>
-									<h2>汪青宜</h2>
+									<span>徐州市泉山森林公园</span>
+									<h2>泉山合影</h2>
 								</div>
 							</a>
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/shanxiaoyu.jpg); ">
-							<a class="color-4">
-								<div class="case-studies-summary">
-									<span>机房副主任兼日管部部长</span>
-									<h2>单晓雨</h2>
-								</div>
-							</a>
-						</li>
-
-
-						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/sunhaichuan.jpg); ">
-							<a class="color-2">
-								<div class="case-studies-summary">
-									<span>技术部部长</span>
-									<h2>孙海川</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/wangpengcheng.jpg); ">
-							<a class="color-1">
-								<div class="case-studies-summary">
-									<span>日管部副部</span>
-									<h2>汪鹏程</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/xuqixian.jpg); "> 
-							<a class="color-3">
-								<div class="case-studies-summary">
-									<span>技术部副部</span>
-									<h2>许启贤</h2>
-								</div>
-							</a>
-						</li>
-						<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/chenyou.jpg); ">
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/2.jpg); ">
 							<a class="color-6">
 								<div class="case-studies-summary">
-									<span>机房技术指导</span>
-									<h2>陈悠</h2>
+									<span>傻里傻气剪刀手</span>
+									<h2>张鹏程</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/3.jpg); ">
+							<a class="color-2">
+								<div class="case-studies-summary">
+									<span>黑人问号.jpg</span>
+									<h2>徐魁元</h2>
+								</div>
+							</a>
+						</li>
+						<li class="one-half animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/4.jpg); ">
+							<a class="color-1">
+								<div class="case-studies-summary">
+									<span>你听说过数学考满分的吗</span>
+									<h2>黑衣人3</h2>
+								</div>
+							</a>
+						</li>
+
+						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/5.jpg); "> 
+							<a class="color-3">
+								<div class="case-studies-summary">
+									<span>小姐姐坐镇</span>
+									<h2>值班日常</h2>
+								</div>
+							</a>
+						</li>
+						<li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/members/6.jpg); ">
+							<a class="color-6">
+								<div class="case-studies-summary">
+									<span>机房获得优秀部门</span>
+									<h2>荣誉瞬间</h2>
 								</div>
 							</a>
 						</li>
@@ -285,7 +332,7 @@
 
 			<div class="row">
 				<div class="col-md-4 col-md-offset-4 text-center animate-box">
-					<a href="album.html" class="btn btn-white btn-outline btn-lg btn-block">查看全体成员</a>
+					<a href="album.html" class="btn btn-white btn-outline btn-lg btn-block rythm color3">查看全体成员</a>
 				</div>
 			</div>
 
@@ -298,49 +345,43 @@
 
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
-					<h2>历史成绩</h2>
-					<p>中国矿业大学免费学习机房成立8年来，我们陪数届师生经历了风风雨雨。<br />（以下数据为粗略统计）</p>
+					<h2>机房内部建设</h2>
+					<p>免费学习机房传承着优秀的部门文化和技术氛围，机房内建旨在创造更好的未来。</p>
 				</div>
 			</div>
 
 			<div class="row">
 				
-				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-					<div class="feature-center">
+				<div class="col-md-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
-							<i class="ti-briefcase"></i>
-						</span>
-						<span class="counter js-counter" data-from="0" data-to="800" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">提供助学岗位</span>
-
+							<i class="fa fa-bell" data-toggle="modal" data-target="#mymodal-data"></i>
+						</span><br />
+						<div class="feature-copy text-center">
+							<h4><a data-toggle="modal" data-target="#mymodal-data">内部信息公示</a></h4>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-					<div class="feature-center">
+				
+				<div class="col-md-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
-							<i class="ti-settings"></i>
-						</span>
-						<span class="counter js-counter" data-from="0" data-to="2000" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">义务维修人次</span>
+							<i class="fa fa-thumbs-o-up" data-toggle="modal" data-target="#mymodal-data"></i>
+						</span><br />
+						<div class="feature-copy text-center">
+							<h4><a data-toggle="modal" data-target="#mymodal-data">学习资源共享</a></h4>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-					<div class="feature-center">
+				
+				<div class="col-md-4">
+					<div class="feature-center animate-box" data-animate-effect="fadeInLeft">
 						<span class="icon">
-							<i class="ti-face-smile"></i>
-						</span>
-						<span class="counter js-counter" data-from="0" data-to="8000" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">上机人次总和</span>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 animate-box" data-animate-effect="fadeInLeft">
-					<div class="feature-center">
-						<span class="icon">
-							<i class="ti-time"></i>
-						</span>
-						<span class="counter js-counter" data-from="0" data-to="21000" data-speed="5000" data-refresh-interval="50">1</span>
-						<span class="counter-label">上机时间总和</span>
-
+							<i class="fa fa-share-alt" data-toggle="modal" data-target="#mymodal-data"></i>
+						</span><br />
+						<div class="feature-copy text-center">
+							<h4><a data-toggle="modal" data-target="#mymodal-data">娱乐资源分享</a></h4>
+						</div>
 					</div>
 				</div>
 					
@@ -348,12 +389,32 @@
 		</div>
 	</div>
 
+	
+	<div class="modal fade" id="mymodal-data" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">免费学习机房</h4>
+				</div>
+				<div class="modal-body">
+					<p>敬请期待</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">知道了</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
 	<div id="gtco-products">
 		<div class="gtco-container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center gtco-heading animate-box">
 					<h2>机房剪影</h2>
-					<p>快来领略免费学习机房人的风采把！</p>
+					<p>快来领略免费学习机房人的风采!&nbsp;&nbsp;&nbsp;<a data-toggle="modal" data-target="#mymodal-data">&nbsp;>>更多</a></p>
 				</div>
 			</div>
 			
@@ -499,6 +560,14 @@
 	<script src="js/magnific-popup-options.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script type="text/javascript">
+
+		var logo=document.getElementById('logo');
+		function play(){
+			logo.style.webkitAnimationPlayState="running";
+			logo.style.animationPlayState="running";
+		}
+	</script>
 
 	</body>
 </html>
