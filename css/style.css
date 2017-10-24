@@ -1004,7 +1004,8 @@ form label {
   position: absolute;
   z-index: 1901;
   width: 270px;
-  background: black;
+  	background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+	line-height:2.5;
   top: 0;
   right: 0;
   top: 0;
@@ -1050,7 +1051,8 @@ form label {
 }
 #gtco-offcanvas ul li > ul {
   padding-left: 20px;
-  display: none;
+  display: block;
+  line-height:1.8;
 }
 #gtco-offcanvas ul li.offcanvas-has-dropdown > a {
   display: block;
